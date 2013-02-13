@@ -1,10 +1,6 @@
 class Sinatra::Base
   def injector
-    @injector ||= self.class.injector_creator.call(sinatra_objects)
-  end
-
-  def sinatra_objects
-    Dependor::Sinatra::Objects.create(self)
+    @injector ||= self.class.injector_creator.call(self)
   end
 
   class << self

@@ -10,13 +10,6 @@ module Dependor
         @response = objects.response
         @session = objects.session
       end
-
-      def self.create(app)
-        Values.new(app.params, app.env, app.request, app.response, app.session)
-      end
-    end
-
-    class Values < Struct.new(:params, :env, :request, :response, :session)
     end
   end
 end
