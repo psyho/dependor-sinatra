@@ -26,6 +26,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'guard-rspec'
   gem.add_development_dependency 'guard-ctags-bundler'
   gem.add_development_dependency 'growl'
-  gem.add_development_dependency 'libnotify'
+  gem.add_development_dependency 'rb-inotify', '~> 0.8.8'
   gem.add_development_dependency 'relish'
+  gem.add_development_dependency 'rack-test'
 end
