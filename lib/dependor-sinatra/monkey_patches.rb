@@ -20,3 +20,5 @@ class Sinatra::Base
     end
   end
 end
+
+Sinatra::Delegator.delegate :injector
