@@ -37,7 +37,7 @@ class Greeter
   end
 end
 
-get "/hello/:login" do |greeter|
+get "/hello/:name" do |greeter|
   greeter.greet
 end
 ```
