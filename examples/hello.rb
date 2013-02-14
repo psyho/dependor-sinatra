@@ -12,17 +12,6 @@ class Greeter
   end
 end
 
-class MyInjector
-  include Dependor::AutoInject
-  include Dependor::Sinatra::Objects
-
-  def initialize(objects)
-    sinatra_objects(objects)
-  end
-end
-
-injector { |objects| MyInjector.new(objects) }
-
 get "/hello/:name" do |greeter|
   greeter.greet
 end

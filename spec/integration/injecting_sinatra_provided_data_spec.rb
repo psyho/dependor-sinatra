@@ -9,18 +9,7 @@ describe "Injecting Sinatra provided data" do
     end
   end
 
-  class MyInjector
-    include Dependor::AutoInject
-    include Dependor::Sinatra::Objects
-
-    def initialize(objects)
-      sinatra_objects(objects)
-    end
-  end
-
   class SinatraAppWithDependor < Sinatra::Base
-    injector { |objects| MyInjector.new(objects) }
-
     set :environment, :test
 
     get "/hello/:name" do |greeter|

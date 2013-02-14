@@ -1,11 +1,10 @@
 require "sinatra"
 require "dependor"
 
-require "dependor-sinatra/version"
+require "dependor-sinatra/block_wrapper"
+require "dependor-sinatra/enabler"
+require "dependor-sinatra/has_injector"
 require "dependor-sinatra/objects"
+require "dependor-sinatra/version"
+require "dependor-sinatra/default_injector"
 require "dependor-sinatra/monkey_patches"
-
-module Dependor
-  module Sinatra
-  end
-end

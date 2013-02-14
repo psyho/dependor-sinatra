@@ -1,24 +1,9 @@
 class Sinatra::Base
-  def injector
-    @injector ||= self.class.injector_creator.call(self)
-  end
-
-  class << self
-    attr_accessor :injector_creator
-
-    def injector(&block)
-      self.injector_creator = block
-    end
-
-    alias :route_without_dependor :route
-    def route(verb, path, options={}, &block)
-      route_without_dependor(verb, path, options) do
-        dependency_names = block.parameters.map(&:last)
-        dependencies = dependency_names.map{|name| injector.__send__(name)}
-        block.call(*dependencies)
-      end
-    end
-  end
+  include Dependor::Sinatra::HasInjector
+  extend Dependor::Sinatra::Enabler
+  enable_dependor :route
+  enable_dependor :add_filter
+  enable_dependor :condition
 end
 
 Sinatra::Delegator.delegate :injector
