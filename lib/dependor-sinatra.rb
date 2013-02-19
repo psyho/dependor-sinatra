@@ -3,6 +3,7 @@ require "dependor"
 
 require "dependor-sinatra/block_wrapper"
 require "dependor-sinatra/enabler"
+require "dependor-sinatra/without_dependor"
 require "dependor-sinatra/has_injector"
 require "dependor-sinatra/objects"
 require "dependor-sinatra/version"

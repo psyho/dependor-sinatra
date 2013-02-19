@@ -15,3 +15,9 @@ end
 get "/hello/:name" do |greeter|
   greeter.greet
 end
+
+without_dependor do
+  get %r{/bye/(\w+)} do |name|
+    "bye #{name}"
+  end
+end
